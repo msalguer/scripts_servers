@@ -9,4 +9,6 @@ The scripts do not claim to be perfect, although under certain conditions with a
 
 They also contain some sample configuration files for more complex installations, such as Nginx with PHP-FPM working with SSL. For openssl to support TLS 1.3, it should be upgraded to another version.
 
+In some cases, the installation is built from some parts of another of the scripts.
+
 Use them at your own risk.
