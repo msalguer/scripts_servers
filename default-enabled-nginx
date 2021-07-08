@@ -1,0 +1,59 @@
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+
+server {
+    listen 80;
+    server_name your_server_name_here;
+    return 301 https://$host$request_uri;
+}
+
+server {
+	listen 443 ssl default_server;
+	#listen              443 ssl;
+	listen [::]:443 ssl default_server;
+    
+	server_name nameserver_here;
+	        
+	ssl_certificate      /etc/ssl/certs/default-ssl.crt; #/etc/ssl/private/sevillaorg.pem;
+	ssl_certificate_key  /etc/ssl/private/default-ssl.key; #/etc/ssl/private/sevillaorg.key;
+	ssl_dhparam /etc/ssl/certs/dhparam.pem;
+	
+	root /var/www;
+
+	# Add index.php to the list if you are using PHP
+	index index.php index.html index.htm index.nginx-debian.html;
+
+    location / {
+        index index.php index.html index.htm;
+        try_files $uri /index.php?$query_string;
+        #try_files $uri $uri/ =404;
+    }
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:8500;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        #fastcgi_param SCRIPT_FILENAME /gesta/data/gestav2/fatfree/index.php;
+        #fastcgi_param  DOCUMENT_ROOT /gesta/data/gestav2/fatfree;
+        #fastcgi_param  DOCUMENT_ROOT $documento_root;
+        #fastcgi_param  SERVER_ADDR 192.168.52.32;
+        #fastcgi_param  SERVER_PORT 3000;
+        #fastcgi_param  SERVER_NAME 192.168.52.32;
+        #fastcgi_param  DOCUMENT_URI https://gestav2b.sevilla.org:3000;
+        include fastcgi_params;
+    }
+
+}
+
