@@ -1,7 +1,7 @@
 # scripts_servers
 MIT License. Manuel Salguero
 
-Set of scripts on Bash shell for basic installations of Apache2, PHP (PHP 7 or default distribution versions), Nginx/PHP-FPM, MySQL 5 or 8 version, Wordpress and Moodle, with HTTPS self-signed certificate.
+Set of scripts in Bash shell for basic installations of Apache2, PHP (PHP 7 or default distribution versions), Nginx/PHP-FPM, MySQL 5 or 8 version, Wordpress and Moodle, with HTTPS self-signed certificate.
 
 The system under which it has been tested has been Ubuntu 20.04
 
