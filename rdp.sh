@@ -39,6 +39,8 @@ then
 else
         echo -e "$Yellow \n If when finished installation, consider install the next line,only if not works:"
         echo "sudo apt install gnome-session gdm3 -y $Color_Off"
+        echo -e "$Yellow \n If you need use other user for RDP connections, you can create new user:"
+        echo "sudo adduser newuser $Color_Off"
 fi
 
 echo -e "$Green \n Installation finished. Try connect with RDP client on 3389 port. $Color_Off"
