@@ -14,10 +14,18 @@ Yellow='\033[0;33m'       # Yellow
 Purple='\033[0;35m'       # Purple
 Cyan='\033[0;36m'         # Cyan
 
-# Update packages and Upgrade system
-echo -e "$Cyan \n Updating System.. $Color_Off"
-sudo apt-get update -y && sudo apt-get upgrade -y
 
+echo -e "$Yellow \n Do you want update and upgrade the Linux System (y/N): $Color_Off"
+read upd
+
+if [ "$upd" == "y" || "$upd" == "Y"] 
+then
+        # Update packages and Upgrade system
+        echo -e "$Cyan \n Updating System.. $Color_Off"
+        sudo apt-get update -y && sudo apt-get upgrade -y
+fi
+
+echo -e "$Cyan \n Installing RDP Service... $Color_Off"
 sudo apt-get install xrdp -y
 sudo ufw allow 3389/tcp
 cat > /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf << EOF
