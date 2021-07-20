@@ -45,10 +45,10 @@ if [ "$gnome" == "y" ] || [ "$gnome" == "Y" ]
 then
         echo -e "$Yellow \n On Gnome Desktop, nothing is necessary. $Color_Off"
 else
-        echo -e "$Yellow \n If when finished installation, consider install the next line,only if not works:"
-        echo "sudo apt install gnome-session gdm3 -y $Color_Off"
-        echo -e "$Yellow \n If you need use other user for RDP connections, you can create new user:"
-        echo "sudo adduser newuser $Color_Off"
+        echo -e "$Yellow \n If when finished installation, consider install the next line,only if not works: $Color_Off"
+        echo "$Yellow sudo apt install gnome-session gdm3 -y $Color_Off"
+        echo -e "$Yellow \n If you need use other user for RDP connections, you can create new user: $Color_Off"
+        echo "$Yellowsudo adduser newuser $Color_Off"
 fi
 
 echo -e "$Green \n Installation finished. Try connect with RDP client on 3389 port. $Color_Off"
