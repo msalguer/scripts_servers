@@ -52,3 +52,4 @@ else
 fi
 
 echo -e "$Green \n Installation finished. Try connect with RDP client on 3389 port. $Color_Off"
+
