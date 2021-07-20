@@ -43,7 +43,7 @@ read gnome
 
 if [ "$gnome" == "y" ] || [ "$gnome" == "Y" ] 
 then
-        echo -e "$Yellow \n On Gnome Desktop, anything is necessary. $Color_Off"
+        echo -e "$Yellow \n On Gnome Desktop, nothing is necessary. $Color_Off"
 else
         echo -e "$Yellow \n If when finished installation, consider install the next line,only if not works:"
         echo "sudo apt install gnome-session gdm3 -y $Color_Off"
