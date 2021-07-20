@@ -18,7 +18,7 @@ Cyan='\033[0;36m'         # Cyan
 echo -e "$Yellow \n Do you want update and upgrade the Linux System (y/N): $Color_Off"
 read upd
 
-if [ "$upd" == "y" || "$upd" == "Y"] 
+if [ "$upd" == "y" ] || [ "$upd" == "Y" ] 
 then
         # Update packages and Upgrade system
         echo -e "$Cyan \n Updating System.. $Color_Off"
@@ -41,7 +41,7 @@ sudo /etc/init.d/xrdp restart
 echo -e "$Yellow \n Do you use Gnome desktop? (y/N): $Color_Off"
 read gnome
 
-if [ "$gnome" == "y" || "$gnome" == "Y"] 
+if [ "$gnome" == "y" ] || [ "$gnome" == "Y" ] 
 then
         echo -e "$Yellow \n On Gnome Desktop, anything is necessary. $Color_Off"
 else
